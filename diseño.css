@@ -637,6 +637,192 @@ header .menu {
   }
 }
 
+/********BLOQUE 4**********/
+
+.who-we-serve {
+  background-color: #FFC72C; /* Dorado */
+  padding: 2rem;
+  text-align: center;
+}
+
+.who-we-serve h2 {
+  color: #003262; /* Azul */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.serve-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.serve-item {
+  text-align: center;
+  width: 30%;
+}
+
+.serve-item a {
+  text-decoration: none;
+}
+
+.serve-item span {
+  color: #4B4B4B; /* Gris oscuro */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.serve-item span:hover {
+  color: #003262; /* Azul al pasar el cursor */
+}
+
+.serve-item img {
+  width: 100%;
+  height: 300px; /* Tamaño fijo para todas las imágenes */
+  object-fit: cover; /* Recorta la imagen sin deformarla */
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.serve-item img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .serve-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-item {
+    width: 90%;
+  }
+}
+
+body.local{
+  background-color: #ffffff;
+}
+
+body.social-j{
+  background-color: #ffffff;
+}
+
+body.vulnerable{
+  background-color: #ffffff;
+}
+
+/************BLOQUE 5*********/
+
+.locations {
+  background-color: #003262; /* Azul */
+  padding: 40px 0;
+  text-align: center;
+}
+
+.locations h2 {
+  color: #FFC72C; /* Dorado */
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.locations-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.location-item {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.location-item span {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.heart-image {
+  width: 100%;
+  height: 300px; /* Ajusté la altura para hacerlo más largo */
+  object-fit: cover;
+  clip-path: polygon(50% 100%, 85% 60%, 100% 30%, 80% 0%, 50% 20%, 20% 0%, 0% 30%, 15% 60%); /* Ajusté los valores para hacerlo más alargado */
+  transition: transform 0.3s;
+  border-radius: 50% 50% 0 0;
+}
+
+
+.location-item a {
+  text-decoration: none;
+}
+
+.location-item a:hover .heart-image {
+  transform: scale(1.1);
+}
+
+.location-item a:hover span {
+  color: #FFC72C; 
+}
+
+@media (max-width: 768px) {
+  .location-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-item {
+    width: 100%;
+  }
+}
+
+
+/*****CHILE, ARGENTINA y USA****/
+
+body.chile{
+  background-color: #ffffff;
+}
+
+body.argentina{
+  background-color: #ffffff;
+}
+
+body.usa{
+  background-color: #ffffff;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px; /* Espacio superior */
+}
+
+/* Estilo base para los botones */
+.btn-about {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  color: #003262; /* Letras azules */
+  background-color: white;
+  border: 2px solid #003262; /* Borde azul */
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Estilo cuando se pasa el cursor por encima */
+.btn-about:hover {
+  background-color: #FFC72C; /* Fondo dorado */
+  color: black; /* Letras negras */
+  border-color: #FFC72C; /* Borde dorado */
+}
+
+
 /*******************************************SUB-PÁGINAS SLIDE**************************************/
 
 
@@ -840,17 +1026,6 @@ iframe {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /************************************OUR WORK Y OUR TEAM******************************/
 
 /* Estilos generales para los miembros del equipo */
@@ -923,3 +1098,10 @@ iframe {
       padding: 10px; /* Reduce aún más el padding */
   }
 }
+
+
+
+
+
+
+
