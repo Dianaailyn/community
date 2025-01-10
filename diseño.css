@@ -159,28 +159,17 @@ header .menu {
 
 /************** Botón REPORT A SCAM ***********/
 .report-scam-button {
-  position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    right: 200px;
-    z-index: 2;
-  background-color: #e53935;
-  color: #fff;
-  padding: 12px 20px;
+  background-color: red;
+  color: white;
+  padding: 10px;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  margin-top: 10px; /* Espacio debajo de los botones de idioma */
-  width: 150px; /* En pantallas pequeñas ocupa todo el ancho */
-  text-align: center;
+  margin-left: 10px; /* Para que no quede pegado al último botón de idioma */
 }
 
 /* Efecto hover para el botón REPORT A SCAM */
 .report-scam-button:hover {
-    background-color: #FFC72C;
+    background-color: #0c2c4a;
     color: #000;
 }
 
@@ -189,57 +178,40 @@ header .menu {
     margin-right: 15px;
 }
 
-/* Ajustes para pantallas medianas */
-@media (max-width: 1024px) {
-  .header {
-    position: relative;
+.language-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* O usa space-between si Chris lo indica */
+}
+
+
+/* Pantallas grandes */
+@media (min-width: 769px) {
+  .language-switch {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 90%; /* Ajusta el ancho del header */
-    max-width: 1200px; /* Si quieres limitar un máximo de ancho */
-    margin: 0 auto; /* Centra el header */
-  }
-  .language-switcher {
-    width: 100%;
-    justify-content: center;
   }
 
   .report-scam-button {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-top: 0;
-    width: auto;
+    margin-left: 20px; /* Separación entre los botones de idioma y el botón "Report a Scam" */
   }
 }
 
-/* Ajustes para pantallas pequeñas */
+/* Pantallas pequeñas */
 @media (max-width: 768px) {
-  .header {
-    position: relative;
-    display: flex;
+  .navbar {
     flex-direction: column;
-    align-items: flex-start;
-    width: 90%; /* Ajusta el ancho del header */
-    margin: 0 auto; /* Centra el header */
+    align-items: flex-start; /* Alinea todo a la izquierda */
   }
-  .language-switcher {
-    width: 100%;
-    justify-content: center;
+
+  .language-switch {
+    margin-bottom: 10px; /* Espacio entre los botones de idioma y el botón "Report a Scam" */
   }
 
   .report-scam-button {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-top: 0;
-    width: auto;
+    margin-top: 10px; /* Separación entre los botones de idioma y el botón "Report a Scam" */
+    align-self: flex-start; /* Alinea el botón a la izquierda */
   }
 }
-
 
 
 /********** MENÚ HAMBURGUESA PARA DISPOSITIVOS MÁS PEQUEÑOS **********/
@@ -1098,6 +1070,7 @@ iframe {
       padding: 10px; /* Reduce aún más el padding */
   }
 }
+
 
 
 
