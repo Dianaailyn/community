@@ -704,10 +704,12 @@ body.vulnerable{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .location-item {
-  width: 30%;
+  flex: 1 1 calc(25% - 20px); /* Toma un 25% del ancho con espacio entre elementos */
+  max-width: 250px; /* Ancho máximo */
   margin-bottom: 20px;
 }
 
@@ -722,7 +724,6 @@ body.vulnerable{
   width: 100%;
   height: 300px; /* Ajusté la altura para hacerlo más largo */
   object-fit: cover;
-  clip-path: polygon(50% 100%, 85% 60%, 100% 30%, 80% 0%, 50% 20%, 20% 0%, 0% 30%, 15% 60%); /* Ajusté los valores para hacerlo más alargado */
   transition: transform 0.3s;
   border-radius: 50% 50% 0 0;
 }
@@ -740,20 +741,130 @@ body.vulnerable{
   color: #FFC72C; 
 }
 
+/* Media queries para pantallas más pequeñas */
 @media (max-width: 768px) {
   .location-item {
-    width: 45%;
+    flex: 1 1 calc(45% - 20px); /* Dos elementos por fila */
   }
 }
 
 @media (max-width: 480px) {
   .location-item {
-    width: 100%;
+    flex: 1 1 100%; /* Un elemento por fila */
+  }
+}
+
+/**BLOQUE 6**/
+
+#contact-section {
+  background-color: #FFC72C; /* Fondo dorado */
+  padding: 50px 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-image {
+  flex: 1; /* Toma espacio proporcional */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-image img {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%; /* Imagen circular */
+  object-fit: cover;
+  border: 5px solid #003262; 
+}
+
+.contact-form {
+  flex: 2; 
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-wrapper {
+  background-color: rgb(255, 255, 255); 
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  color: #4B4B4B; 
+}
+
+.form-wrapper h2 {
+  color: #003262; 
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form .form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea, 
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #003262; 
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #002147;  
+}
+
+.contact-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+  .contact-container {
+      flex-direction: column; /* Imagen y formulario apilados */
+      text-align: center;
+  }
+
+  .contact-image img {
+      width: 200px;
+      height: 200px;
+  }
+
+  .form-wrapper {
+      padding: 20px;
   }
 }
 
 
-/*****CHILE, ARGENTINA y USA****/
+
+/*****CHILE, ARGENTINA, USA y España****/
 
 body.chile{
   background-color: #ffffff;
@@ -920,7 +1031,6 @@ iframe {
 
 /********************************************MISION & VISION *****************************/
 
-/* Estilos específicos para la subpágina de Misión, Visión y Valores */
 .mision {
   padding: 40px;
   background-color: #fff;
@@ -943,8 +1053,8 @@ iframe {
 /* Estilos para la sección de Misión, Visión y Valores */
 .mission-vision {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center; /* Alinea los elementos centrados */
+  gap: 20px; /* Espacio uniforme entre columnas */
   flex-wrap: wrap;
 }
 
@@ -953,52 +1063,184 @@ iframe {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 30%;
+  width: 28%; 
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .mission-vision .column img {
-  width: 100%; /* La imagen ocupa el 100% del ancho de la columna */
-  height: 200px; /* Altura fija para todas las imágenes */
-  object-fit: cover; /* Hace que la imagen cubra el área sin deformarse */
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
 .mission-vision .column p {
-  color: #ffffff; /* Azul para el texto */
+  color: #ffffff; 
   font-size: 16px;
   line-height: 1.6;
 }
 
 .mission-vision .column h2 {
   font-size: 24px;
-  color: #FFC72C; /* Dorado para los títulos */
+  color: #FFC72C; 
   margin-bottom: 20px;
 }
 
 /* Efecto hover para las columnas */
 .mission-vision .column:hover {
-  transform: scale(1.05); /* Aumenta el tamaño de las columnas al pasar el cursor */
+  transform: scale(1.05); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos responsive */
 @media (max-width: 768px) {
   .mission-vision .column {
-      width: 45%; /* En pantallas medianas, 2 columnas */
+      width: 45%; 
   }
 }
 
 @media (max-width: 480px) {
   .mission-vision .column {
-      width: 100%; /* En pantallas pequeñas, 1 columna */
+      width: 100%; 
+  }
+}
+
+/************************************OUR WORK ******************************/
+
+.our-work {
+  background-color: #003262; 
+  padding: 50px;
+  text-align: center;
+}
+
+.our-work h1 {
+  color: #FFC72C; 
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+/* Estilos para los contenedores de trabajo */
+.work-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.work-container {
+  width: 30%;
+  perspective: 1000px; /* Añade la perspectiva para los giros */
+}
+
+.work-item {
+  background-color: #FFC72C; 
+  color: #003262; 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 350px; /* Aseguramos que todos los contenedores tengan el mismo tamaño */
+  width: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d; /* Asegura que los elementos en 3D no se deformen */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrado del contenido */
+}
+
+
+.work-item .front,
+.work-item .back {
+  backface-visibility: hidden; /* Oculta la parte de atrás cuando se gira */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrado tanto vertical como horizontal */
+  text-align: center; /* Centrado del texto */
+}
+
+.work-item .front {
+  display: block; 
+}
+
+.work-item .back {
+  transform: rotateY(180deg); /* Gira la parte trasera */
+  display: none; /* La parte trasera está oculta por defecto */
+  background-color: #FFC72C;
+  color: #003262;
+  padding: 20px;
+  text-align: center;
+}
+
+.work-item:hover {
+  transform: rotateY(180deg); /* Gira el contenedor al pasar el cursor */
+}
+
+.work-item:hover .back {
+  display: block; /* Muestra la parte trasera al pasar el cursor */
+}
+
+.work-item h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.work-item .image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Para hacer la imagen circular */
+  overflow: hidden;
+}
+
+.work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-item .hidden-text {
+  display: none;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #003262;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .work-container {
+    width: 45%; /* Dos columnas en pantallas medianas */
+    margin: 0 auto; /* Centrado en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .work-container {
+    width: 100%; /* Una columna en pantallas pequeñas */
+    margin: 0 auto; /* Centrado en pantallas pequeñas */
+  }
+
+  .work-section {
+    justify-content: center; /* Asegura que los contenedores estén centrados en pantallas pequeñas */
   }
 }
 
 
-/************************************OUR WORK Y OUR TEAM******************************/
+/************************************OUR TEAM y BOARD MEMBERS******************************/
+
+h1 {
+  color: #FFC72C; /* Color dorado */
+  text-align: center; /* Centra el título horizontalmente */
+  margin-top: 50px; /* Ajusta el espacio superior, si es necesario */
+  font-size: 36px; /* Tamaño de fuente para el título */
+}
 
 /* Estilos generales para los miembros del equipo */
 .team-container {
@@ -1049,27 +1291,86 @@ iframe {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más grande */
 }
 
+/* Efectos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .team-container {
+      grid-template-columns: 1fr; /* Cambiar a una columna en pantallas más pequeñas */
+      gap: 20px; /* Ajusta el espacio entre los miembros */
+  }
+
+  .team-member {
+      padding: 15px; /* Ajuste de padding */
+  }
+}
+
 /* Estilos responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .team-container {
-      grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas pequeñas */
-      gap: 15px;
+      display: flex;
+      flex-direction: column; /* Apilar los miembros uno encima del otro */
+      gap: 20px; /* Ajuste el espacio entre los miembros */
   }
 
   .team-member {
-      padding: 15px; /* Reduce el padding en pantallas más pequeñas */
+      padding: 15px; /* Ajusta el padding para pantallas pequeñas */
   }
 }
 
-@media (max-width: 480px) {
-  .team-container {
-      grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
-  }
+/******MIEMBROS****/
 
-  .team-member {
-      padding: 10px; /* Reduce aún más el padding */
-  }
+.miembros{
+  background-color: #ffffff;
 }
+
+.ceo-message {
+  text-align: center;
+  margin: 50px 0;
+  font-family: Arial, sans-serif;
+}
+
+.ceo-message h2 {
+  color: #FFC72C; /* Dorado para el título */
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.ceo-message p {
+  font-size: 1.2em;
+  color: #003262; /* Azul para el texto */
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px; /* Espacio entre los iconos */
+  justify-content: center; /* Centra los iconos en la pantalla */
+  align-items: center;
+}
+
+.social-button {
+  background-color: #003262; /* Azul para el fondo de los botones */
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para las imágenes de los iconos */
+.social-icon {
+  width: 30px; /* Ajusta el tamaño del icono */
+  height: 30px; /* Asegura que el icono tenga altura proporcional */
+  margin-top: 5px; /* Espacio entre el texto y el icono */
+  transition: transform 0.3s ease; /* Efecto de transición al pasar el cursor */
+}
+
+
+.social-button:hover {
+  background-color: #FFC72C; /* Dorado al pasar el cursor */
+}
+
 
 
 
