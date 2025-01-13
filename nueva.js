@@ -42,6 +42,28 @@ function updateDots() {
   });
 }
 
+// Avanzar al siguiente slide
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides; // Ciclo infinito
+  goToSlide(currentIndex);
+}
+
+// Iniciar el desplazamiento automático
+function startAutoSlide() {
+  autoSlide = setInterval(nextSlide, 3000); // Cambiar slide cada 3 segundos
+}
+
+
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+// Iniciar la lógica del carrusel
+document.addEventListener('DOMContentLoaded', () => {
+  goToSlide(0); // Ir al primer slide
+  startAutoSlide(); // Comenzar desplazamiento automático
+});
+
 /******Menu hamburguesa logo****/
 
 document.addEventListener("DOMContentLoaded", function () {
