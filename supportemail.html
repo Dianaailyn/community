@@ -68,7 +68,32 @@
           </ul>
         </nav>
       </header>
+      <body id="support-email-page">
 
+    
+        <div class="container">
+            <section class="intro">
+              <h1>Support Email</h1>
+                <p>If you need help or have any inquiries, please reach out to our support team by filling out the form below. We’ll get back to you as soon as possible.</p>
+            </section>
+    
+            <form action="your_backend_script_here" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+    
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </body>
       
       <script src="nueva.js"></script>
 </body>
