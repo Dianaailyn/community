@@ -1119,7 +1119,6 @@ iframe {
   margin-bottom: 40px;
 }
 
-/* Estilos para los contenedores de trabajo */
 .work-section {
   display: flex;
   justify-content: space-between;
@@ -1129,7 +1128,7 @@ iframe {
 
 .work-container {
   width: 30%;
-  perspective: 1000px; /* Añade la perspectiva para los giros */
+  perspective: 1000px;
 }
 
 .work-item {
@@ -1143,11 +1142,7 @@ iframe {
   width: 100%;
   transition: transform 0.6s ease;
   transform-style: preserve-3d; 
-  display: flex;
-  justify-content: center;
-  align-items: center; 
 }
-
 
 .work-item .front,
 .work-item .back {
@@ -1161,26 +1156,34 @@ iframe {
   justify-content: center;
   align-items: center; 
   text-align: center;
-
-.work-item .front {
-  display: block; 
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.work-item .back {
-  transform: rotateY(180deg); 
-  display: none;
+
+.work-item .front {
   background-color: #FFC72C;
   color: #003262;
-  padding: 20px;
-  text-align: center;
+}
+
+
+.work-item .back {
+  background-color: #003262;
+  color: #FFC72C;
+  transform: rotateY(180deg);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out;
 }
 
 .work-item:hover {
-  transform: rotateY(180deg); 
+  transform: rotateY(180deg);
 }
 
 .work-item:hover .back {
-  display: block; 
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .work-item h2 {
@@ -1203,13 +1206,6 @@ iframe {
   object-fit: cover;
 }
 
-.work-item .hidden-text {
-  display: none;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #003262;
-}
-
 /* Estilos responsivos */
 @media (max-width: 768px) {
   .work-container {
@@ -1228,6 +1224,7 @@ iframe {
     justify-content: center; 
   }
 }
+
 
 
 /************************************OUR TEAM y BOARD MEMBERS******************************/
@@ -1549,7 +1546,7 @@ h1 {
 
 /*************************GRC***************************/
 
-/* Estilos exclusivos para la sub-página GRC */
+
 #grc-page {
   background-color: white;
   display: flex;
@@ -2270,8 +2267,6 @@ img {
     margin: 0 auto; 
   }
 }
-
-
 
 
 
